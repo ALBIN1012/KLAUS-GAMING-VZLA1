@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Carrito de Compras - Klaus Gaming Vzla</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="imagenes/favicon2.png" type="image/jpeg">
+    <style>
+        .cart-item-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #1f2937;
+            padding: 1rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+        }
+        .cart-item-card:hover {
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.15);
+        }
+        @media (max-width: 650px) {
+            .cart-item-card { flex-direction: column; text-align: center; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+   <!-- CABECERA PARA PRODUCTO, CARRITO Y CHECKOUT -->
+    <header class="header-top">
+        <div class="nav-container" style="display: flex; align-items: center; justify-content: space-between; gap: 15px; flex-wrap: wrap;">
+            
+            <!-- LOGO (Al hacerle clic te devuelve al index) -->
+            <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;">
+                <img src="imagenes/favicon2.png" alt="Mando Gamer Neón" class="mando-banner" style="height: 28px; margin-right: 8px;">
+                KLAUS <span class="neon-text">GAMING</span> <span class="tag-vzla">VZLA</span>
+            </a>
+            
+            <!-- CARRITO -->
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <a href="carrito.html" class="search-btn" style="text-decoration: none; background: #111827; border: 1px solid var(--neon-green); color: #fff; padding: 6px 14px; border-radius: 8px;">
+                    🛒 <span style="color: var(--neon-green); font-weight: 900;" class="cart-counter-badge">0</span>
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="main-container" style="margin-top: 3rem; margin-bottom: 5rem; max-width: 1050px;">
+        
+        <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <h1 style="font-size: 2.2rem; color: #fff;">🛒 Tu Carrito de <span style="color: var(--neon-green);">Juegos Digitales</span></h1>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Revisa tu selección antes de pasar al embudo de pago.</p>
+            </div>
+            <button onclick="vaciarCarrito()" style="background: rgba(255, 0, 85, 0.1); border: 1px solid #ff0055; color: #ff0055; padding: 8px 15px; border-radius: 8px; cursor: pointer; font-weight: bold;">
+                🗑️ Vaciar Todo
+            </button>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2.5rem; align-items: start;" id="grid-carrito">
+            
+            <!-- COLUMNA IZQUIERDA: LISTA DE PRODUCTOS -->
+            <div id="lista-carrito-contenedor">
+                <!-- Aquí el JavaScript inyectará las tarjetas de los juegos automáticamente -->
+            </div>
+
+            <!-- COLUMNA DERECHA: CAJA DE PAGO (TOTAL) -->
+            <aside style="background: #111827; padding: 2rem; border-radius: 16px; border: 1px solid var(--neon-green); box-shadow: 0 0 20px rgba(0, 255, 136, 0.15); position: sticky; top: 100px;">
+                <h3 style="color: var(--text-muted); font-size: 0.85rem; letter-spacing: 1.5px; margin-bottom: 1.5rem; border-bottom: 1px solid #1f2937; padding-bottom: 8px;">RESUMEN DE PAGO</h3>
+                
+                <div style="display: flex; justify-content: space-between; margin-bottom: 10px; color: #bbb;">
+                    <span>Cantidad de Juegos:</span>
+                    <span id="resumen-cant" style="font-weight: bold; color: #fff;">0</span>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; background: #1f2937; padding: 15px; border-radius: 10px; margin: 1.5rem 0;">
+                    <span style="color: #fff; font-size: 1.1rem; font-weight: bold;">TOTAL A PAGAR:</span>
+                    <span id="resumen-total-usdt" style="font-size: 1.8rem; font-weight: 900; color: var(--neon-green);">0.00 USDT</span>
+                </div>
+
+                <button onclick="irAlCheckoutDesdeCarrito()" class="btn-buy" style="width: 100%; padding: 1.2rem; font-size: 1.1rem; font-weight: 900; background: var(--neon-green); color: #000; border: none; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);">
+                    <span> CONFIRMAR COMPRA</span>
+                </button>
+                
+                <div style="text-align: center; font-size: 0.75rem; color: var(--text-muted); margin-top: 12px;">
+                    💡 Podrás adjuntar tu pago de Binance, Zinli o Pago Móvil en el siguiente paso.
+                </div>
+            </aside>
+
+        </div>
+
+    </main>
+
+    <!-- SCRIPT DE DIBUJADO DE LA TABLA -->
+    <script src="js/cart.js"></script>
+    <script>
+        function renderizarCarrito() {
+            let carrito = getCarrito();
+            let contenedor = document.getElementById('lista-carrito-contenedor');
+            let total = 0;
+
+            // Si está vacío, mostramos un aviso genial
+            if (carrito.length === 0) {
+                contenedor.innerHTML = `
+                    <div style="text-align: center; padding: 3rem; background: #111827; border-radius: 12px; border: 1px dashed var(--border-color);">
+                        <span style="font-size: 3rem; display: block; margin-bottom: 10px;">😢</span>
+                        <h3 style="color: #fff; font-size: 1.3rem;">Tu carrito está vacío</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Aún no has sumado ningún juego digital a tu lista.</p>
+                        <a href="index.html" class="btn-buy" style="text-decoration: none; display: inline-block; padding: 10px 20px;">🎮 Ir al Catálogo de Juegos</a>
+                    </div>
+                `;
+                document.getElementById('resumen-cant').innerText = "0";
+                document.getElementById('resumen-total-usdt').innerText = "0.00 USDT";
+                return;
+            }
+
+            // Si hay juegos, dibujamos una tarjeta por cada uno
+            let html = '';
+            carrito.forEach((juego, index) => {
+                total += juego.precio;
+                html += `
+                    <div class="cart-item-card">
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <img src="${juego.imagen || 'imagenes/favicon2.png'}" alt="Carátula" style="width: 70px; height: 50px; object-fit: cover; border-radius: 6px; border: 1px solid var(--border-color);">
+                            <div>
+                                <h4 style="color: #fff; font-size: 1.1rem; margin: 0;">${juego.nombre}</h4>
+                                <span style="color: var(--neon-cyan); font-size: 0.8rem;">Código Digital / Entrega Inmediata</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 20px;">
+                            <span style="font-size: 1.3rem; font-weight: 900; color: var(--neon-green);">${juego.precio.toFixed(2)} USDT</span>
+                            <button onclick="eliminarDelCarrito(${index})" style="background: transparent; border: none; color: #ff0055; font-size: 1.3rem; cursor: pointer;" title="Eliminar del carrito">🗑️</button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            contenedor.innerHTML = html;
+            document.getElementById('resumen-cant').innerText = carrito.length;
+            document.getElementById('resumen-total-usdt').innerText = total.toFixed(2) + ' USDT';
+        }
+
+        function vaciarCarrito() {
+            if (confirm('¿Estás seguro de que deseas vaciar todo el carrito?')) {
+                localStorage.removeItem('klaus_carrito');
+                renderizarCarrito();
+                actualizarContadorCarrito();
+            }
+        }
+
+        function irAlCheckoutDesdeCarrito() {
+            let carrito = getCarrito();
+            if (carrito.length === 0) {
+                alert('⚠️ Tu carrito está vacío. Suma al menos un producto para procesar el pago.');
+                return;
+            }
+            // Mandamos una señal especial a checkout.html diciéndole que lea el carrito
+            window.location.href = 'checkout.html?origen=carrito';
+        }
+
+        // Cargar los juegos al abrir la página
+        window.onload = function() {
+            renderizarCarrito();
+        };
+    </script>
+</body>
+</html>

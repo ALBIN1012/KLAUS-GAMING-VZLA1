@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Producto - Klaus Gaming Vzla</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Favicon del control LED con truco anti-caché -->
+    <link rel="icon" href="imagenes/favicon2.png" type="image/png">
+</head>
+<body>
+
+    <!-- CABECERA PARA PRODUCTO, CARRITO Y CHECKOUT -->
+    <header class="header-top">
+        <div class="nav-container" style="display: flex; align-items: center; justify-content: space-between; gap: 15px; flex-wrap: wrap;">
+            
+            <!-- LOGO (Al hacerle clic te devuelve al index) -->
+            <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;">
+                <img src="imagenes/favicon2.png" alt="Mando Gamer Neón" class="mando-banner" style="height: 28px; margin-right: 8px;">
+                KLAUS <span class="neon-text">GAMING</span> <span class="tag-vzla">VZLA</span>
+            </a>
+            
+            <!-- CARRITO -->
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <a href="carrito.html" class="search-btn" style="text-decoration: none; background: #111827; border: 1px solid var(--neon-green); color: #fff; padding: 6px 14px; border-radius: 8px;">
+                    🛒 <span style="color: var(--neon-green); font-weight: 900;" class="cart-counter-badge">0</span>
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- CONTENEDOR PRINCIPAL DEL PRODUCTO -->
+    <main class="main-container" style="margin-top: 3rem; margin-bottom: 5rem;">
+        
+        <section class="product-detail-grid" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: start;">
+            
+            <!-- COLUMNA IZQUIERDA: GALERÍA Y VIDEO DEMO -->
+            <div class="media-gallery">
+                
+                <div class="main-image-box" style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); margin-bottom: 15px;">
+                    <span id="det-plataforma" class="tag-platform" style="background: #0070d1; color: #fff; position: absolute; top: 15px; left: 15px; z-index: 2;">PS5 EXCLUSIVO</span>
+                    <img id="visor-gallery" src="imagenes/playstation/Juegos/ragnarok.jpg" alt="God of War Ragnarök" style="width: 100%; height: 400px; object-fit: cover; display: block;">
+                </div>
+
+                <div class="thumbnails-grid" style="display: flex; gap: 10px; margin-bottom: 25px;" id="det-miniaturas">
+                    <!-- El JS insertará las miniaturas aquí -->
+                </div>
+
+                <h3 style="margin-bottom: 10px; font-size: 1.1rem; color: var(--text-muted);">🎬 Tráiler Oficial / Gameplay Demo</h3>
+                <div class="video-responsive" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; border: 1px solid var(--border-color);">
+                    <iframe id="det-video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/hfJ4Km46A-0" title="Tráiler de Gameplay" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+            </div>
+
+            <!-- COLUMNA DERECHA: DATOS, PRECIO Y BOTONES DE COMPRA -->
+            <div class="product-info" style="background: #111827; padding: 2.5rem; border-radius: 16px; border: 1px solid var(--border-color);">
+                
+                <span style="color: var(--neon-green); font-weight: bold; font-size: 0.85rem; letter-spacing: 1px;">🟢 ENTREGA INMEDIATA AL VERIFICAR</span>
+                <h1 id="det-titulo" style="font-size: 2.2rem; margin: 10px 0; color: #fff;">God of War: Ragnarök</h1>
+                
+                <p id="det-desc" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.6;">
+                    Cargando información del juego...
+                </p>
+
+                <!-- Caja de Precio -->
+                <div style="background: rgba(0, 255, 136, 0.05); border: 1px dashed var(--neon-green); padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
+                    <div style="font-size: 0.85rem; color: var(--text-muted);">Precio Promocional:</div>
+                    <div id="det-precio" style="font-size: 2.5rem; font-weight: 900; color: var(--neon-green);">29.99 USDT</div>
+                    <div style="font-size: 0.8rem; color: #fff; margin-top: 5px;">⚡ Aceptamos Binance Pay, Zinli y Pago Móvil (Tasa BCV del día)</div>
+                </div>
+
+                <!-- Especificaciones -->
+                <ul id="det-specs" style="list-style: none; padding: 0; margin-bottom: 2rem; display: flex; flex-direction: column; gap: 10px; font-size: 0.9rem; color: #ddd;">
+                    <!-- El JS insertará las especificaciones aquí -->
+                </ul>
+
+                <!-- BOTONES DE ACCIÓN -->
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <button id="btn-adquirir" class="btn-buy" style="padding: 1.2rem; font-size: 1.1rem; font-weight: 900; background: var(--neon-green); color: #000; cursor: pointer; text-align: center; border: none; border-radius: 8px; transition: transform 0.2s;">
+                        ⚡ ADQUIRIR AHORA
+                    </button>
+
+                    <button id="btn-agregar" class="btn-buy" style="padding: 1rem; font-size: 1rem; background: transparent; color: #fff; border: 2px solid var(--border-color); cursor: pointer; text-align: center; border-radius: 8px; transition: all 0.2s;">
+                        🛒 Agregar al Carrito
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ARCHIVO DEL CARRITO (Para que el contador funcione) -->
+    <script src="js/cart.js"></script>
+
+    <!-- MOTOR DE PLANTILLA DINÁMICA -->
+    <script>
+        // 📚 BASE DE DATOS DEL CATÁLOGO
+        const baseDeDatosJuegos = {
+            "ragnarok": {
+                titulo: "God of War: Ragnarök",
+                plataforma: "PS5 EXCLUSIVO",
+                precio: 29.99,
+                imagen: "imagenes/playstation/Juegos/ragnarok.jpg",
+                trailer: "https://www.youtube.com/embed/hfJ4Km46A-0",
+                desc: "El épico desenlace de la saga nórdica. Únete a Kratos y Atreus en una aventura mitológica para evitar el fin del mundo. Disfruta de combate táctico, gráficos en 4K HDR y audio 3D envolvente en tu consola PlayStation.",
+                specs: [
+                    "🎮 <strong>Plataforma:</strong> PlayStation 4 / PlayStation 5",
+                    "🔑 <strong>Formato:</strong> Código Digital / Cuenta Primaria",
+                    "🌐 <strong>Región:</strong> Global / USA (Sin bloqueo regional)",
+                    "🛡️ <strong>Garantía:</strong> 100% de por vida contra bloqueos"
+                ]
+            },
+            "spiderman2": {
+                titulo: "Marvel's Spider-Man 2",
+                plataforma: "PS5 EXCLUSIVO",
+                precio: 35.00,
+                imagen: "imagenes/playstation/Juegos/spiderman2.jpg",
+                trailer: "https://www.youtube.com/embed/nq1M_Wc4FIc",
+                desc: "Los Spider-Men Peter Parker y Miles Morales regresan para una nueva y emocionante aventura en la franquicia de Marvel's Spider-Man. Balancéate, salta y utiliza las nuevas Alitas de telaraña para viajar por toda la Nueva York de Marvel.",
+                specs: [
+                    "🎮 <strong>Plataforma:</strong> PlayStation 5 Exclusivo",
+                    "🔑 <strong>Formato:</strong> Código Digital / Cuenta Primaria",
+                    "🌐 <strong>Región:</strong> Global / USA (Multilenguaje)",
+                    "🛡️ <strong>Garantía:</strong> Entrega instantánea por WhatsApp"
+                ]
+            },
+            "tlou": {
+                titulo: "The Last of Us Part I",
+                plataforma: "PS4 & PS5",
+                precio: 25.00,
+                imagen: "imagenes/playstation/Juegos/thelastofus.jpg",
+                trailer: "https://www.youtube.com/embed/R2EbjPCWTnM",
+                desc: "Disfruta de la emotiva historia y los inolvidables personajes de Joel y Ellie en The Last of Us, ganador de más de 200 premios al Juego del Año y reconstruido completamente desde cero para la consola PlayStation 5 con gráficos realistas.",
+                specs: [
+                    "🎮 <strong>Plataforma:</strong> PlayStation 4 / PlayStation 5 Remake",
+                    "🔑 <strong>Formato:</strong> Código Digital / Cuenta Primaria",
+                    "🌐 <strong>Región:</strong> Global / USA (Español Latino incluido)",
+                    "🛡️ <strong>Garantía:</strong> Soporte técnico y canje 24/7"
+                ]
+            }
+        };
+
+        // ⚙️ LÓGICA DE TRANSFORMACIÓN AL ABRIR
+        window.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const idJuego = params.get('id') || 'ragnarok';
+            const juego = baseDeDatosJuegos[idJuego];
+
+            if (!juego) {
+                alert("⚠️ El producto no fue encontrado. Regresando a la portada...");
+                window.location.href = "index.html";
+                return;
+            }
+
+            // Inyección de datos en la pantalla
+            document.title = `${juego.titulo} - Klaus Gaming Vzla`;
+            document.getElementById('det-plataforma').innerText = juego.plataforma;
+            document.getElementById('det-titulo').innerText = juego.titulo;
+            document.getElementById('det-desc').innerText = juego.desc;
+            document.getElementById('det-precio').innerText = `${juego.precio.toFixed(2)} USDT`;
+            document.getElementById('visor-gallery').src = juego.imagen;
+            document.getElementById('det-video').src = juego.trailer;
+
+            document.getElementById('det-specs').innerHTML = juego.specs.map(item => `<li>${item}</li>`).join('');
+
+            document.getElementById('det-miniaturas').innerHTML = `
+                <img src="${juego.imagen}" class="thumb active" onclick="cambiarImagen(this.src)" style="width: 80px; height: 60px; object-fit: cover; border-radius: 6px; cursor: pointer; border: 2px solid var(--neon-green);">
+            `;
+
+            // Configurar botones
+            document.getElementById('btn-adquirir').onclick = function() {
+                window.location.href = `checkout.html?juego=${encodeURIComponent(juego.titulo)}&precio=${juego.precio}&img=${encodeURIComponent(juego.imagen)}`;
+            };
+
+            document.getElementById('btn-agregar').onclick = function() {
+                agregarAlCarrito(juego.titulo, juego.precio, juego.imagen);
+            };
+        });
+
+        function cambiarImagen(ruta) {
+            document.getElementById('visor-gallery').src = ruta;
+            let thumbs = document.querySelectorAll('.thumb');
+            thumbs.forEach(t => { t.style.borderColor = 'transparent'; t.style.opacity = '0.6'; });
+            event.target.style.borderColor = 'var(--neon-green)';
+            event.target.style.opacity = '1';
+        }
+    </script>
+</body>
+</html>

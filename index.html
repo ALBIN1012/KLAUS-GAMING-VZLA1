@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klaus Gaming Store Vzla - Tienda Digital por Consolas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Fuente Futurista Gamer (Orbitron) desde Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    
+    <!-- Favicon: El icono de tu pestaña en el navegador -->
+    <link rel="icon" href="imagenes/favicon2.png" type="image/png">
+</head>
+<body>
+
+    <!-- CABECERA PARA INDEX.HTML -->
+    <header class="header-top">
+        <div class="nav-container" style="display: flex; align-items: center; justify-content: space-between; gap: 15px; flex-wrap: wrap;">
+            
+            <!-- LOGO -->
+            <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;">
+                <img src="imagenes/favicon2.png" alt="Mando Gamer Neón" class="mando-banner" style="height: 28px; margin-right: 8px;">
+                KLAUS <span class="neon-text">GAMING</span> <span class="tag-vzla">VZLA</span>
+            </a>
+            
+            <!-- 🔍 MOTOR DE BÚSQUEDA -->
+            <div style="flex: 1; max-width: 350px; min-width: 200px; position: relative;">
+                <input type="text" id="input-buscador" placeholder="🔍 Buscar juego (Ej: Spider-Man)..." style="width: 100%; padding: 8px 12px; background: #111827; border: 1px solid var(--border-color); border-radius: 8px; color: #fff; font-size: 0.9rem; outline: none;" onkeyup="filtrarJuegos(event)">
+            </div>
+
+            <!-- CARRITO -->
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <a href="carrito.html" class="search-btn" style="text-decoration: none; background: #111827; border: 1px solid var(--neon-green); color: #fff; padding: 6px 14px; border-radius: 8px;">
+                    🛒 <span style="color: var(--neon-green); font-weight: 900;" class="cart-counter-badge">0</span>
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <span class="badge">⚡ Entrega Inmediata en Venezuela 24/7</span>
+        <h1>Recarga tus <span>Plataformas Favoritas</span></h1>
+        <p>Juegos digitales, códigos de saldo, membresías de Xbox Game Pass Ultimate y PS Plus al mejor precio en USDT y Binance Pay.</p>
+        <a href="#dept-xbox" class="search-btn" style="padding: 0.9rem 2.2rem; font-size: 1rem; border-radius: 30px; display: inline-block;">Explorar Consolas</a>
+    </section>
+
+    <section class="categories-section" aria-label="Selección de consolas">
+        <div class="categories-title">¿Qué plataforma buscas?</div>
+        
+        <div class="categories-grid">
+            <div class="cat-circle" onclick="location.href='#dept-xbox'">
+                <img src="imagenes/Xbox.jpg" alt="Logo oficial de Xbox" class="cat-icon-img">
+                <span class="cat-name">Xbox</span>
+            </div>
+            
+            <div class="cat-circle" onclick="location.href='#dept-playstation'">
+                <img src="imagenes/playstation.jpg" alt="Logo oficial de PlayStation" class="cat-icon-img">
+                <span class="cat-name">PlayStation</span>
+            </div>
+            
+            <div class="cat-circle" onclick="location.href='#dept-steam'">
+                <img src="imagenes/steam.jpg" alt="Logo oficial de Steam para PC" class="cat-icon-img">
+                <span class="cat-name">Steam / PC</span>
+            </div>
+            
+            <div class="cat-circle" onclick="location.href='#dept-nintendo'">
+                <img src="imagenes/nintendo.jpg" alt="Logo oficial de Nintendo Switch" class="cat-icon-img">
+                <span class="cat-name">Nintendo</span>
+            </div>
+            
+            <div class="cat-circle" onclick="location.href='#dept-giftcards'">
+                <img src="imagenes/giftcard.jpg" alt="Tarjetas de regalo para tiendas digitales" class="cat-icon-img">
+                <span class="cat-name">Gift Cards</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="main-container">
+
+        <main>
+            
+            <section id="dept-xbox">
+                <div class="section-header">
+                    <h2 class="section-title">Consolas & Game Pass</h2>
+                    <span style="color: var(--neon-green); font-size: 0.85rem; font-weight: bold;">🟢 SERIES X|S & ONE</span>
+                </div>
+                
+                <section class="sub-department" style="margin-bottom: 2rem;">
+                    <h3 style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">Suscripciones Xbox Game Pass</h3>
+                    
+                    <div class="products-grid">
+                        <article class="game-card">
+                            <div style="position: relative;">
+                                <span class="tag-platform" style="background: var(--neon-green); color: #000;">ULTIMATE</span>
+                                <img src="imagenes/xbox/gamepass-ultimate.jpg" alt="Game Pass Ultimate" class="game-img-cover">
+                            </div>
+                            <div class="card-body">
+                                <div>
+                                    <h3 class="game-title">Game Pass Ultimate - 3 Meses</h3>
+                                    <p class="game-info">La experiencia definitiva. Consola, PC, Nube, EA Play y multijugador online.</p>
+                                </div>
+                                <div>
+                                    <div class="price-box">
+                                        <span class="price-usdt">35.00 USDT</span>
+                                        <span class="price-sub">Entrega Inmediata</span>
+                                    </div>
+                                    <button class="btn-buy" style="border-color: var(--neon-green); color: var(--neon-green);" onclick="alert('Añadido: Game Pass Ultimate 3M')">Activar Código</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="game-card">
+                            <div style="position: relative;">
+                                <span class="tag-platform" style="background: var(--neon-green); color: #000;">ESSENTIALS</span>
+                                <img src="imagenes/xbox/gamepass-essentials.jpg" alt="Game Pass Essentials" class="game-img-cover">
+                            </div>
+                            <div class="card-body">
+                                <div>
+                                    <h3 class="game-title">Game Pass Essentials - 1 Mes</h3>
+                                    <p class="game-info">Acceso al catálogo base de cientos de juegos para descargar en tu consola Xbox.</p>
+                                </div>
+                                <div>
+                                    <div class="price-box">
+                                        <span class="price-usdt">12.00 USDT</span>
+                                        <span class="price-sub">Suscripción Mensual</span>
+                                    </div>
+                                    <button class="btn-buy" style="border-color: var(--neon-green); color: var(--neon-green);" onclick="alert('Añadido: Game Pass Essentials 1M')">Activar Código</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="game-card">
+                            <div style="position: relative;">
+                                <span class="tag-platform" style="background: var(--neon-green); color: #000;">CORE</span>
+                                <img src="imagenes/xbox/gamepass-core.jpg" alt="Game Pass Core" class="game-img-cover">
+                            </div>
+                            <div class="card-body">
+                                <div>
+                                    <h3 class="game-title">Game Pass Core - 12 Meses</h3>
+                                    <p class="game-info">El reemplazo de Xbox Live Gold. Multijugador online y catálogo de 25+ juegos.</p>
+                                </div>
+                                <div>
+                                    <div class="price-box">
+                                        <span class="price-usdt">55.00 USDT</span>
+                                        <span class="price-sub">Membresía Anual</span>
+                                    </div>
+                                    <button class="btn-buy" style="border-color: var(--neon-green); color: var(--neon-green);" onclick="alert('Añadido: Game Pass Core 12M')">Activar Código</button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="sub-department" style="margin-bottom: 1rem;">
+                    <h3 style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">Juegos Digitales (Códigos 25 dígitos)</h3>
+                    
+                    <div class="products-grid">
+                        <article class="game-card">
+                            <div style="position: relative;">
+                                <span class="tag-platform">SERIES X|S</span>
+                                <img src="imagenes/xbox/Juegos/fc26-xbox.jpg" alt="EA Sports FC 26" class="game-img-cover">
+                            </div>
+                            <div class="card-body">
+                                <div>
+                                    <h3 class="game-title">EA Sports FC 26 - Xbox Series</h3>
+                                    <p class="game-info">Código digital optimizado para Quick Resume y 120 FPS.</p>
+                                </div>
+                                <div>
+                                    <div class="price-box">
+                                        <span class="price-usdt">59.99 USDT</span>
+                                        <span class="price-sub">Entrega Inmediata</span>
+                                    </div>
+                                    <button class="btn-buy" onclick="alert('Añadido: FC 26 Xbox')">Comprar Juego</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="game-card">
+                            <div style="position: relative;">
+                                <span class="tag-platform" style="background: var(--discount-red); color: #fff;">OFERTA</span>
+                                <img src="imagenes/xbox/Juegos/halo-infinite.jpg" alt="Halo Infinite" class="game-img-cover">
+                            </div>
+                            <div class="card-body">
+                                <div>
+                                    <h3 class="game-title">Halo Infinite - Campaña Completa</h3>
+                                    <p class="game-info">El regreso del Jefe Maestro en el anillo Zeta Halo en 4K.</p>
+                                </div>
+                                <div>
+                                    <div class="price-box">
+                                        <span class="price-usdt">29.99 USDT</span>
+                                        <span class="price-sub" style="text-decoration: line-through;">Antes: 59.99 USDT</span>
+                                    </div>
+                                    <button class="btn-buy" onclick="alert('Añadido: Halo Infinite')">Comprar Juego</button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </section>
+
+            
+            <!-- DEPARTAMENTO PLAYSTATION  -->
+            
+            <section id="dept-playstation" style="margin-top: 3rem;">
+                <div class="section-header">
+                    <h2 class="section-title">Consolas PlayStation</h2>
+                    <span style="color: #0070d1; font-size: 0.85rem; font-weight: bold;">🔵 PS5 & PS4 EXCLUSIVES</span>
+                </div>
+
+                <!-- BLOQUE 1: SUSCRIPCIONES PLAYSTATION PLUS -->
+                <section class="sub-department" style="margin-bottom: 2rem;">
+                    <h3 style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">Suscripciones PlayStation Plus</h3>
+                    
+                    <div class="products-grid"> 
+                        
+                        <!-- 1. TARJETA: PS PLUS ESSENTIAL -->
+                        <article class="game-card">
+                            <div style="position: relative;">
+                                <span class="tag-platform" style="background: #0070d1; color: #fff;">ESSENTIAL</span>
+                                <img src="imagenes/playstation/playstationessential.jpg" alt="PlayStation Plus Essential" class="game-img-cover">
+                            </div>
+                            <div class="card-body">
+                                <div>
+                                    <h3 class="game-title">PS Plus Essential - 1 Mes</h3>
+                                    <p class="game-info">Acceso al multijugador online, juegos descargables mensuales y descuentos exclusivos.</p>
+                                </div>
+                                <div>
+                                    <div class="price-box">
+                                        <span class="price-usdt">10.00 USDT</span>
+                                        <span class="price-sub">Suscripción Mensual</span>
+                                    </div>
+                                    <button class="btn-buy" style="border-color: #0070d1; color: #0070d1;" onclick="alert('Añadido: PS Plus Essential')">Activar Código</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- 2. TARJETA: PS PLUS EXTRA -->
+                        <article class="game-card">
+                            <div style="position: relative;">
+                                <span class="tag-platform" style="background: #0070d1; color: #fff;">EXTRA</span>
+                                <img src="imagenes/playstation/playstationextra.jpg" alt="PlayStation Plus Extra" class="game-img-cover">
+                            </div>
+                            <div class="card-body">
+                                <div>
+                                    <h3 class="game-title">PS Plus Extra - 1 Mes</h3>
+                                    <p class="game-info">Todo lo de Essential más un catálogo enorme con cientos de juegos de PS4 y PS5.</p>
+                                </div>
+                                <div>
+                                    <div class="price-box">
+                                        <span class="price-usdt">15.00 USDT</span>
+                                        <span class="price-sub">Suscripción Mensual</span>
+                                    </div>
+                                    <button class="btn-buy" style="border-color: #0070d1; color: #0070d1;" onclick="alert('Añadido: PS Plus Extra')">Activar Código</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- 3. TARJETA: PS PLUS DELUXE -->
+                        <article class="game-card">
+                            <div style="position: relative;">
+                                <span class="tag-platform" style="background: #0070d1; color: #fff;">DELUXE</span>
+                                <img src="imagenes/playstation/playstationdeluxe.jpg" alt="PlayStation Plus Deluxe" class="game-img-cover">
+                            </div>
+                            <div class="card-body">
+                                <div>
+                                    <h3 class="game-title">PS Plus Deluxe - 1 Mes</h3>
+                                    <p class="game-info">La experiencia definitiva: catálogo clásico, pruebas de juegos nuevos y todo lo anterior.</p>
+                                </div>
+                                <div>
+                                    <div class="price-box">
+                                        <span class="price-usdt">18.00 USDT</span>
+                                        <span class="price-sub">Suscripción Mensual</span>
+                                    </div>
+                                    <button class="btn-buy" style="border-color: #0070d1; color: #0070d1;" onclick="alert('Añadido: PS Plus Deluxe')">Activar Código</button>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                </section>
+<!-- BLOQUE 2: JUEGOS DIGITALES PLAYSTATION -->
+                <!-- BLOQUE 2: JUEGOS DIGITALES PLAYSTATION -->
+                <section class="sub-department" style="margin-bottom: 2rem; margin-top: 2rem;">
+                    <h3 style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">Juegos Digitales (PS4 & PS5)</h3>
+                    
+                    <div class="products-grid"> 
+                        
+                        <!-- 1. GOD OF WAR RAGNARÖK -->
+                        <article class="game-card">
+                            <div style="position: relative;">
+                                <span class="tag-platform" style="background: #0070d1; color: #fff;">PS5 EXCLUSIVO</span>
+                                <!-- Fíjate que aquí dice ?id=ragnarok -->
+                                <a href="producto.html?id=ragnarok">
+                                    <img src="imagenes/playstation/Juegos/ragnarok.jpg" alt="God of War Ragnarök" class="game-img-cover">
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <div>
+                                    <!-- Y aquí también dice ?id=ragnarok -->
+                                    <a href="producto.html?id=ragnarok" style="text-decoration: none; color: inherit;">
+                                        <h3 class="game-title">God of War: Ragnarök</h3>
+                                    </a>
+                                    <p class="game-info">El épico desenlace de la saga nórdica con Kratos y Atreus en 4K.</p>
+                                </div>
+                                <div>
+                                    <div class="price-box">
+                                        <span class="price-usdt">29.99 USDT</span>
+                                        <span class="price-sub">Código Digital / Cuenta</span>
+                                    </div>
+                                    <!-- Y en el botón también: -->
+                                    <button class="btn-buy" onclick="location.href='producto.html?id=ragnarok'">Ver Detalle / Tráiler</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- 2. SPIDER-MAN 2 -->
+                        <article class="game-card">
+                            <div style="position: relative;">
+                                <span class="tag-platform" style="background: #0070d1; color: #fff;">PS5 EXCLUSIVO</span>
+                                <!-- Fíjate que aquí le cambiamos el final a ?id=spiderman2 -->
+                                <a href="producto.html?id=spiderman2">
+                                    <img src="imagenes/playstation/Juegos/spiderman2.jpg" alt="Marvel's Spider-Man 2" class="game-img-cover">
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <div>
+                                    <!-- Y aquí también dice ?id=spiderman2 -->
+                                    <a href="producto.html?id=spiderman2" style="text-decoration: none; color: inherit;">
+                                        <h3 class="game-title">Marvel's Spider-Man 2</h3>
+                                    </a>
+                                    <p class="game-info">Juega como Peter Parker y Miles Morales por toda Nueva York.</p>
+                                </div>
+                                <div>
+                                    <div class="price-box">
+                                        <span class="price-usdt">35.00 USDT</span>
+                                        <span class="price-sub">Código Digital / Cuenta</span>
+                                    </div>
+                                    <!-- Y en el botón también: -->
+                                    <button class="btn-buy" onclick="location.href='producto.html?id=spiderman2'">Ver Detalle / Tráiler</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- 3. THE LAST OF US -->
+                        <article class="game-card">
+                            <div style="position: relative;">
+                                <span class="tag-platform" style="background: #0070d1; color: #fff;">PS4 & PS5</span>
+                                <!-- Fíjate que aquí le cambiamos el final a ?id=tlou -->
+                                <a href="producto.html?id=tlou">
+                                    <img src="imagenes/playstation/Juegos/thelastofus.jpg" alt="The Last of Us Part I" class="game-img-cover">
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <div>
+                                    <!-- Y aquí también dice ?id=tlou -->
+                                    <a href="producto.html?id=tlou" style="text-decoration: none; color: inherit;">
+                                        <h3 class="game-title">The Last of Us Part I</h3>
+                                    </a>
+                                    <p class="game-info">Acompaña a Joel y Ellie en un viaje inolvidable por una Norteamérica postapocalíptica.</p>
+                                </div>
+                                <div>
+                                    <div class="price-box">
+                                        <span class="price-usdt">25.00 USDT</span>
+                                        <span class="price-sub">Código Digital / Cuenta</span>
+                                    </div>
+                                    <!-- Y en el botón también: -->
+                                    <button class="btn-buy" onclick="location.href='producto.html?id=tlou'">Ver Detalle / Tráiler</button>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                </section>
+
+            <section id="dept-steam" style="margin-top: 3rem;">
+                <div class="section-header">
+                    <h2 class="section-title">Consolas PC & Steam</h2>
+                    <span style="color: var(--steam-purple); font-size: 0.85rem; font-weight: bold;">🟣 STEAM KEYS & WALLET</span>
+                </div>
+                
+                <div class="products-grid">
+                    <article class="game-card">
+                        <div style="position: relative;">
+                            <span class="tag-platform" style="background: var(--steam-purple); color: #fff;">SALDO STEAM</span>
+                            <img src="imagenes/steam/steamwallet.jpg" alt="Steam Wallet Card $20" class="game-img-cover">
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <h3 class="game-title">Steam Wallet Card - $20 USD</h3>
+                                <p class="game-info">Recarga tu monedero de Steam al instante para comprar en rebajas.</p>
+                            </div>
+                            <div>
+                                <div class="price-box">
+                                    <span class="price-usdt">20.00 USDT</span>
+                                    <span class="price-sub">Código Global</span>
+                                </div>
+                                <button class="btn-buy" style="border-color: var(--steam-purple); color: #c084fc;" onclick="alert('Añadido: Steam Wallet $20')">Comprar Saldo</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="game-card">
+                        <div style="position: relative;">
+                            <span class="tag-platform" style="background: var(--discount-red); color: #fff;">OFERTA PC</span>
+                            <img src="imagenes/steam/cyberpunk2077.jpg" alt="Cyberpunk 2077: Phantom Liberty" class="game-img-cover">
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <h3 class="game-title">Cyberpunk 2077: Phantom Liberty</h3>
+                                <p class="game-info">Key oficial de Steam. RPG de acción en la futurista Night City.</p>
+                            </div>
+                            <div>
+                                <div class="price-box">
+                                    <span class="price-usdt">28.00 USDT</span>
+                                    <span class="price-sub" style="text-decoration: line-through;">Antes: 59.99 USDT</span>
+                                </div>
+                                <button class="btn-buy" onclick="alert('Añadido: Cyberpunk 2077')">Comprar Key</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="game-card">
+                        <div style="position: relative;">
+                            <span class="tag-platform" style="background: var(--steam-purple); color: #fff;">STEAM KEY</span>
+                            <img src="imagenes/steam/callofduty6.jpg" alt="Call of Duty: Black Ops 6" class="game-img-cover">
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <h3 class="game-title">Call of Duty: Black Ops 6 - PC</h3>
+                                <p class="game-info">Optimizado para Battle.net y Steam con DLSS y Ray Tracing.</p>
+                            </div>
+                            <div>
+                                <div class="price-box">
+                                    <span class="price-usdt">69.99 USDT</span>
+                                    <span class="price-sub">Entrega Inmediata</span>
+                                </div>
+                                <button class="btn-buy" onclick="alert('Añadido: BO6 PC')">Comprar Key</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="game-card">
+                        <div style="position: relative;">
+                            <span class="tag-platform" style="background: var(--steam-purple); color: #fff;">GOTY PC</span>
+                            <img src="imagenes/steam/eldenring.jpg" alt="Elden Ring + Shadow of the Erdtree" class="game-img-cover">
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <h3 class="game-title">Elden Ring + Shadow of the Erdtree</h3>
+                                <p class="game-info">La experience definitiva de las Tierras Intermedias en Steam.</p>
+                            </div>
+                            <div>
+                                <div class="price-box">
+                                    <span class="price-usdt">55.00 USDT</span>
+                                    <span class="price-sub">Edición Completa</span>
+                                </div>
+                                <button class="btn-buy" onclick="alert('Añadido: Elden Ring DLC')">Comprar Key</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section id="dept-nintendo" style="margin-top: 3rem;">
+                <div class="section-header">
+                    <h2 class="section-title">Consolas Nintendo</h2>
+                    <span style="color: var(--nin-red); font-size: 0.85rem; font-weight: bold;">🔴 SWITCH ESHOP & EXCLUSIVES</span>
+                </div>
+                
+                <div class="products-grid">
+                    <article class="game-card">
+                        <div style="position: relative;">
+                            <span class="tag-platform" style="background: var(--nin-red); color: #fff;">EXCLUSIVO</span>
+                            <img src="imagenes/nintendo/juegos/zelda.jpg" alt="Zelda: Tears of the Kingdom" class="game-img-cover">
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <h3 class="game-title">The Legend of Zelda: Tears of the Kingdom</h3>
+                                <p class="game-info">Explora los cielos y tierras de Hyrule en esta aventura maestra.</p>
+                            </div>
+                            <div>
+                                <div class="price-box">
+                                    <span class="price-usdt">59.99 USDT</span>
+                                    <span class="price-sub">Código eShop USA</span>
+                                </div>
+                                <button class="btn-buy" style="border-color: var(--nin-red); color: #f87171;" onclick="alert('Añadido: Zelda TOTK')">Comprar Juego</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="game-card">
+                        <div style="position: relative;">
+                            <span class="tag-platform" style="background: var(--nin-red); color: #fff;">MULTIJUGADOR</span>
+                            <img src="imagenes/nintendo/juegos/mariokart0.jpg" alt="Mario Kart 8 Deluxe" class="game-img-cover">
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <h3 class="game-title">Mario Kart 8 Deluxe + Booster Course</h3>
+                                <p class="game-info">El juego de carreras definitivo con 96 pistas para jugar con amigos.</p>
+                            </div>
+                            <div>
+                                <div class="price-box">
+                                    <span class="price-usdt">49.99 USDT</span>
+                                    <span class="price-sub">Código Digital</span>
+                                </div>
+                                <button class="btn-buy" style="border-color: var(--nin-red); color: #f87171;" onclick="alert('Añadido: Mario Kart 8')">Comprar Juego</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="game-card">
+                        <div style="position: relative;">
+                            <span class="tag-platform" style="background: var(--nin-red); color: #fff;">ESPORTS</span>
+                            <img src="imagenes/nintendo/juegos/supermariosmash.jpg" alt="Super Smash Bros. Ultimate" class="game-img-cover">
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <h3 class="game-title">Super Smash Bros. Ultimate</h3>
+                                <p class="game-info">El mayor crossover de lucha de la historia con todos los personajes.</p>
+                            </div>
+                            <div>
+                                <div class="price-box">
+                                    <span class="price-usdt">54.99 USDT</span>
+                                    <span class="price-sub">Código eShop</span>
+                                </div>
+                                <button class="btn-buy" style="border-color: var(--nin-red); color: #f87171;" onclick="alert('Añadido: Smash Bros')">Comprar Juego</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="game-card">
+                        <div style="position: relative;">
+                            <span class="tag-platform" style="background: var(--nin-red); color: #fff;">SALDO ESHOP</span>
+                            <img src="imagenes/nintendo/juegos/giftcard.jpg" alt="Nintendo eShop Card $25" class="game-img-cover">
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <h3 class="game-title">Nintendo eShop Card - $25 USD</h3>
+                                <p class="game-info">Añade fondos a tu cuenta Nintendo para comprar juegos y DLCs.</p>
+                            </div>
+                            <div>
+                                <div class="price-box">
+                                    <span class="price-usdt">25.00 USDT</span>
+                                    <span class="price-sub">Canje Instantáneo</span>
+                                </div>
+                                <button class="btn-buy" style="border-color: var(--nin-red); color: #f87171;" onclick="alert('Añadido: eShop Card $35')">Comprar Saldo</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section id="dept-giftcards" style="margin-top: 3rem;">
+                <div class="section-header">
+                    <h2 class="section-title">Consolas Gift Cards</h2>
+                    <span style="color: var(--card-gold); font-size: 0.85rem; font-weight: bold;">🟡 TARJETAS DIGITALES GLOBAL</span>
+                </div>
+                
+                <div class="products-grid">
+                    <article class="game-card">
+                        <div style="position: relative;">
+                            <span class="tag-platform" style="background: var(--card-gold); color: #000;">XBOX CARD</span>
+                            <img src="imagenes/giftcards/tarjetas/giftcardxbox.jpg" alt="Xbox Gift Card $50" class="game-img-cover">
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <h3 class="game-title">Xbox Gift Card - $50 USD</h3>
+                                <p class="game-info">Saldo canjeable en Microsoft Store para juegos, DLC y consolas.</p>
+                            </div>
+                            <div>
+                                <div class="price-box">
+                                    <span class="price-usdt">50.00 USDT</span>
+                                    <span class="price-sub">Entrega por WhatsApp</span>
+                                </div>
+                                <button class="btn-buy" style="border-color: var(--card-gold); color: #fbbf24;" onclick="alert('Añadido: Gift Card Xbox $50')">Comprar Tarjeta</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="game-card">
+                        <div style="position: relative;">
+                            <span class="tag-platform" style="background: var(--card-gold); color: #000;">PSN CARD</span>
+                            <img src="imagenes/giftcards/tarjetas/gitcardplaystation.jpg" alt="PlayStation Network Card $25" class="game-img-cover">
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <h3 class="game-title">PlayStation Network Card - $25 USD</h3>
+                                <p class="game-info">Fondos para tu monedero PSN de cuentas estadounidenses (USA).</p>
+                            </div>
+                            <div>
+                                <div class="price-box">
+                                    <span class="price-usdt">25.00 USDT</span>
+                                    <span class="price-sub">Entrega Inmediata</span>
+                                </div>
+                                <button class="btn-buy" style="border-color: var(--card-gold); color: #fbbf24;" onclick="alert('Añadido: PSN Card $25')">Comprar Tarjeta</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="game-card">
+                        <div style="position: relative;">
+                            <span class="tag-platform" style="background: var(--card-gold); color: #000;">ROBLOX</span>
+                            <img src="imagenes/giftcards/tarjetas/robloxgitcard.jpg" alt="Roblox Gift Card 2500 Robux" class="game-img-cover">
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <h3 class="game-title">Roblox Digital Gift Card - 2500 Robux</h3>
+                                <p class="game-info">Moneda virtual para personalizar tu avatar y comprar ítems especiales.</p>
+                            </div>
+                            <div>
+                                <div class="price-box">
+                                    <span class="price-usdt">25.00 USDT</span>
+                                    <span class="price-sub">Código Global</span>
+                                </div>
+                                <button class="btn-buy" style="border-color: var(--card-gold); color: #fbbf24;" onclick="alert('Añadido: Roblox 2500 Robux')">Comprar Tarjeta</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="game-card">
+                        <div style="position: relative;">
+                            <span class="tag-platform" style="background: var(--card-gold); color: #000;">APPLE / GOOGLE</span>
+                            <img src="imagenes/giftcards/tarjetas/applegiftcard.jpg" alt="Apple App Store Card $15" class="game-img-cover">
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <h3 class="game-title">Apple App Store / iTunes - $15 USD</h3>
+                                <p class="game-info">Para suscripciones de iCloud, Apple Music y compras en juegos móviles.</p>
+                            </div>
+                            <div>
+                                <div class="price-box">
+                                    <span class="price-usdt">15.00 USDT</span>
+                                    <span class="price-sub">Canje en iOS / Mac</span>
+                                </div>
+                                <button class="btn-buy" style="border-color: var(--card-gold); color: #fbbf24;" onclick="alert('Añadido: Apple Card $15')">Comprar Tarjeta</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+        </main>
+
+        <div class="sidebar-wrapper">
+            
+            <aside aria-label="Menú de servicios">
+                <div class="widget">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="#dept-xbox"><span>🟢 Xbox Series X|S</span> <span>(5)</span></a></li>
+                        <li><a href="#dept-playstation"><span>🔵 PlayStation 5 & 4</span> <span>(5)</span></a></li>
+                        <li><a href="#dept-steam"><span>🟣 PC Gaming & Steam</span> <span>(4)</span></a></li>
+                        <li><a href="#dept-nintendo"><span>🔴 Nintendo Switch</span> <span>(4)</span></a></li>
+                        <li><a href="#dept-giftcards"><span>🟡 Gift Cards Globales</span> <span>(4)</span></a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <aside aria-label="Centro de asistencia">
+                <div class="widget promo-box">
+                    <h4 style="color: var(--neon-cyan); font-size: 1.2rem; margin-bottom: 8px;">¿Dudas con tu Canje?</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem;">Asesoría en vivo para canjear tus códigos en cuentas de Venezuela o USA sin errores.</p>
+                    <button class="btn-buy" style="background: var(--neon-cyan); color: #000; font-weight: 900;" onclick="alert('Contactando a soporte técnico...')">Centro de Ayuda</button>
+                </div>
+            </aside>
+
+        </div>
+
+    </div>
+
+    <section class="newsletter" id="boletin">
+        <h2>Boletín Informativo</h2>
+        <p>Suscríbete y recibe promociones en USDT y alertas de ofertas especiales directamente en tu correo.</p>
+        
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('¡Suscrito con éxito al boletín de Klaus Gaming!');">
+            <input type="email" class="search-input" style="border-radius: 8px 0 0 8px;" placeholder="Ingresa tu correo aquí..." required aria-label="Correo electrónico">
+            <button type="submit" class="search-btn" style="border-radius: 0 8px 8px 0;">Suscribirse</button>
+        </form>
+    </section>
+
+    <footer id="contacto">
+        <div class="footer-grid">
+            
+            <div>
+                <h4>Sobre Nosotros</h4>
+                <p style="margin-bottom: 1rem; line-height: 1.6;">
+                    Somos <strong>Klaus Gaming Vzla</strong>, una marca nacida para brindarte una variedad de servicios digitales y códigos de la marca Xbox, PlayStation y Steam con entrega instantánea.
+                </p>
+                <p><strong>📍 Tienda Física / Online:</strong> Valencia, Carabobo - Venezuela</p>
+            </div>
+
+            <div>
+                <h4>Atención al Cliente</h4>
+                <ul>
+                    <li><a href="#">Contáctanos / Soporte En Vivo</a></li>
+                    <li><a href="#">Asistencia para canje de códigos</a></li>
+                    <li><a href="#">Envío, devoluciones y garantía</a></li>
+                    <li><a href="#">Preguntas Frecuentes (FAQ)</a></li>
+                </ul>
+                
+                <h4 style="margin-top: 1.5rem; font-size: 0.9rem;">Métodos de Pago:</h4>
+                <div class="payment-methods">
+                    <span class="pay-badge" style="border-color: #00ff88; color: #00ff88;">USDT / BINANCE</span>
+                    <span class="pay-badge" style="border-color: #f3ba2f; color: #f3ba2f;">ZINLI / ZELLE</span>
+                    <span class="pay-badge" style="border-color: #00e5ff; color: #00e5ff;">PAGO MÓVIL (Tasa BCV)</span>
+                </div>
+            </div>
+
+            <div>
+                <h4>Embajadores Oficiales</h4>
+                <p style="margin-bottom: 0.8rem;">Contamos con el respaldo de comunidades oficiales del gaming en la región.</p>
+                <div style="display: flex; gap: 10px;">
+                    <div class="pay-badge" style="background: #102015; border-color: var(--neon-green);">🏆 XBOX AMBASSADOR</div>
+                    <div class="pay-badge" style="background: #101520; border-color: var(--neon-cyan);">🛡️ VERIFICADO</div>
+                </div>
+            </div>
+
+            <div>
+                <h4>Síguenos en Redes</h4>
+                <div class="qr-box" style="text-align: center;">
+                    <!-- Aquí cargamos tu imagen QR desde la carpeta principal de imágenes -->
+                    <img src="imagenes/qr.jpg" alt="Código QR de @KlausGamingVzla" style="width: 115px; height: 115px; border-radius: 8px; background: #ffffff; padding: 6px; margin-bottom: 8px; border: 2px solid var(--neon-green); box-shadow: 0 0 10px rgba(0, 255, 136, 0.2);">
+                    <div style="font-weight: bold; font-size: 0.85rem; color: #fff; margin-bottom: 2px;">@KlausGamingVzla</div>
+                    <span style="font-size: 0.7rem; color: var(--text-muted);">Escanea con tu celular</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Klaus Gaming Store Vzla. Precios sujetos a tasa de cambio.</p>
+            <p style="color: var(--neon-green); font-weight: bold;">HTML5 Semántico + CSS3 Pro</p>
+        </div>
+    </footer>
+
+    <div class="floating-widgets">
+        
+        <aside class="chat-window" id="chatBox" aria-label="Asistente de compras">
+            <div style="display: flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; margin-bottom: 10px; font-weight: bold; color: #fff;">
+                <span style="width: 8px; height: 8px; background: var(--neon-green); border-radius: 50%;"></span>
+                <span>🤖 KlausBot - Atención en Vivo</span>
+            </div>
+            <p style="font-size: 0.85rem; margin-bottom: 12px;">¡Qué tal! 👋 ¿Necesitas precio en Pago Móvil o información para activar Game Pass?</p>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+                <button class="btn-buy" style="font-size: 0.75rem; text-align: left;" onclick="alert('Tasa actualizada al día. Aceptamos Pago Móvil e Inmediato en Binance / USDT.')">🟢 Ver métodos de pago</button>
+                <button class="btn-buy" style="font-size: 0.75rem; text-align: left; border-color: var(--neon-green); color: var(--neon-green);" onclick="alert('El código se envía por WhatsApp o Correo en 5 minutos tras verificar el pago.')">⚡ Tiempo de entrega del código</button>
+            </div>
+        </aside>
+
+        <div style="display: flex; gap: 10px; align-items: center;">
+            <a href="#inicio" class="btn-scroll-top" aria-label="Volver al inicio de la página" title="Volver arriba">&#9650;</a>
+            <button class="btn-chatbot" aria-label="Abrir asistente de soporte" onclick="document.getElementById('chatBox').classList.toggle('active')">💬</button>
+        </div>
+
+    </div>
+<script src="js/cart.js"></script>
+</body>
+</html>

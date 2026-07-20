@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klaus Gaming Store Vzla - Tienda Digital por Consolas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Fuente Futurista Gamer (Orbitron) desde Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    
+    <!-- Favicon: El icono de tu pestaña en el navegador -->
+    <link rel="icon" href="imagenes/favicon2.png" type="image/png">
+</head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout y Verificación - Klaus Gaming Vzla</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="imagenes/favicon2.png" type="image/png">
+    <style>
+        /* Estilos exclusivos para el nuevo checkout profesional */
+        .checkout-grid {
+            display: grid;
+            grid-template-columns: 1fr 2.6fr; 
+            gap: 3rem; 
+            align-items: start;
+        }
+        
+        /* Zona para subir la captura - VERSIÓN BARRA COMPACTA */
+        .upload-box {
+            border: 2px dashed var(--neon-cyan);
+            background: rgba(0, 229, 255, 0.03);
+            border-radius: 8px;
+            padding: 0.6rem 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 55px;
+        }
+        .upload-box:hover {
+            background: rgba(0, 229, 255, 0.08);
+            border-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+        }
+        .upload-box input[type="file"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+        
+        /* En celulares se adapta uno debajo del otro automáticamente */
+        @media (max-width: 900px) {
+            .checkout-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+<body>
+
+    <!-- CABECERA PARA PRODUCTO, CARRITO Y CHECKOUT -->
+    <header class="header-top">
+        <div class="nav-container" style="display: flex; align-items: center; justify-content: space-between; gap: 15px; flex-wrap: wrap;">
+            
+            <!-- LOGO (Al hacerle clic te devuelve al index) -->
+            <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;">
+                <img src="imagenes/favicon2.png" alt="Mando Gamer Neón" class="mando-banner" style="height: 28px; margin-right: 8px;">
+                KLAUS <span class="neon-text">GAMING</span> <span class="tag-vzla">VZLA</span>
+            </a>
+            
+            <!-- CARRITO -->
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <a href="carrito.html" class="search-btn" style="text-decoration: none; background: #111827; border: 1px solid var(--neon-green); color: #fff; padding: 6px 14px; border-radius: 8px;">
+                    🛒 <span style="color: var(--neon-green); font-weight: 900;" class="cart-counter-badge">0</span>
+                </a>
+            </div>
+
+        </div>
+    </header>
+    <main class="main-container" style="margin-top: 3rem; margin-bottom: 5rem; max-width: 1350px; width: 94%;">
+        
+        <!-- ENCABEZADO DEL CHECKOUT -->
+        <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 1.5rem; margin-bottom: 2.5rem;">
+            <span class="badge" style="background: var(--neon-cyan); color: #000; font-weight: bold;">🔒 Verificación Segura 24/7</span>
+            <h1 style="font-size: 2.4rem; margin-top: 10px; color: #fff;">Reporte de Pago y <span style="color: var(--neon-green);">Canje Digital</span></h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Adjunta tu referencia y captura de pantalla para liberar tu código de activación instantáneamente.</p>
+        </div>
+
+            <!-- CONTENEDOR ANCHO DE DOS COLUMNAS -->
+        <div class="checkout-grid">
+            
+            <!-- COLUMNA IZQUIERDA: RESUMEN Y DATOS DE TRANSFERENCIA -->
+            <div style="display: flex; flex-direction: column; gap: 1.5rem; position: sticky; top: 100px;">
+                
+                <!-- 1. RESUMEN DEL PEDIDO -->
+                <aside style="background: #111827; padding: 2rem; border-radius: 16px; border: 1px solid var(--border-color);">
+                    <h3 style="color: var(--text-muted); font-size: 0.85rem; letter-spacing: 1.5px; margin-bottom: 1rem; border-bottom: 1px solid #1f2937; padding-bottom: 8px;">RESUMEN DE TU PEDIDO</h3>
+                    
+                    <!-- Foto de la Carátula -->
+                    <div style="position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 1.2rem; border: 1px solid var(--neon-green); box-shadow: 0 0 15px rgba(0, 255, 136, 0.15);">
+                        <img id="resumen-img" src="imagenes/playstation/Juegos/ragnarok.jpg" alt="Carátula del Juego" style="width: 100%; height: 240px; object-fit: cover; display: block;">
+                    </div>
+
+                    <!-- Nombre y Precio -->
+                    <div id="resumen-nombre" style="font-size: 1.3rem; font-weight: bold; color: #fff; line-height: 1.3; margin-bottom: 8px;">God of War: Ragnarök</div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; background: #1f2937; padding: 12px 15px; border-radius: 8px; margin-top: 1rem;">
+                        <span style="color: #bbb; font-size: 0.9rem;">Total a Pagar:</span>
+                        <span id="resumen-precio" style="font-size: 1.4rem; font-weight: 900; color: var(--neon-green);">29.99 USDT</span>
+                    </div>
+                </aside>
+
+                <!-- 2. NUEVA VENTANA: DATOS DE PAGO MÓVIL / BANCO -->
+                <aside style="background: #111827; padding: 1.8rem; border-radius: 16px; border: 1px solid var(--neon-cyan); box-shadow: 0 0 20px rgba(0, 229, 255, 0.15);">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 1rem; border-bottom: 1px solid #1f2937; padding-bottom: 8px;">
+                        <span style="font-size: 1.3rem;">📲</span>
+                        <h3 style="color: var(--neon-cyan); font-size: 0.95rem; letter-spacing: 1px; margin: 0; font-weight: bold;">DATOS PARA PAGO MÓVIL</h3>
+                    </div>
+                    
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.4;">
+                        Realiza tu transferencia bancaria y adjunta el número de referencia y la captura en el formulario:
+                    </p>
+                    
+                    <!-- Caja resaltada con los datos -->
+                    <div style="background: #1f2937; padding: 14px 16px; border-radius: 10px; font-size: 0.95rem; line-height: 1.8; color: #fff; border-left: 4px solid var(--neon-cyan); margin-bottom: 1.2rem;">
+                        <div><strong>🏦 Banco:</strong> Provincial (0108)</div>
+                        <div><strong>📱 Teléfono:</strong> <span style="color: var(--neon-green); font-weight: 900; font-size: 1.1rem; letter-spacing: 0.5px;">04227993250</span></div>
+                        <div><strong>📄 Concepto:</strong> Pago Klaus Gaming</div>
+                    </div>
+                    
+                    <!-- Botón interactivo para copiar el número rápido -->
+                    <button type="button" class="btn-buy" style="padding: 10px; font-size: 0.85rem; font-weight: bold; background: rgba(0, 229, 255, 0.1); border: 1px solid var(--neon-cyan); color: var(--neon-cyan); width: 100%; border-radius: 8px; cursor: pointer; transition: all 0.2s;" onclick="navigator.clipboard.writeText('04227993250'); alert('📱 ¡Número 04227993250 copiado al portapapeles con éxito!');">
+                        📋 Copiar Teléfono (04227993250)
+                    </button>
+                    
+                    <!-- Garantía de la Tienda -->
+                    <div style="margin-top: 1.2rem; font-size: 0.75rem; color: var(--text-muted); line-height: 1.4; text-align: center;">
+                        🛡️ <strong>Garantía Klaus:</strong> Canje digital protegido las 24 horas del día.
+                    </div>
+                </aside>
+
+            </div>
+
+            <!-- COLUMNA DERECHA: FORMULARIO ANCHO Y CAPTURA (Se mantiene igual) -->
+            <div style="background: #111827; padding: 2.5rem; border-radius: 16px; border: 1px solid var(--border-color); box-shadow: 0 0 25px rgba(0,0,0,0.5);">
+
+            <!-- COLUMNA DERECHA: FORMULARIO ANCHO Y CAPTURA -->
+            <div style="background: #111827; padding: 2.5rem; border-radius: 16px; border: 1px solid var(--border-color); box-shadow: 0 0 25px rgba(0,0,0,0.5);">
+                
+                <h2 style="font-size: 1.3rem; color: #fff; margin-bottom: 1.5rem;">✍️ Ingresa los datos de tu transferencia</h2>
+
+                <form id="pago-form" onsubmit="event.preventDefault(); procesarEnvioWhatsApp();">
+                    
+                    <!-- 1. Datos Personales -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div>
+                            <label style="display: block; color: #ddd; font-weight: bold; font-size: 0.9rem; margin-bottom: 6px;">Nombre y Apellido:</label>
+                            <input type="text" id="cli-nombre" required placeholder="Ej: Albin Medina" style="width: 100%; padding: 12px; border-radius: 8px; background: #1f2937; border: 1px solid var(--border-color); color: #fff;">
+                        </div>
+                        <div>
+                            <label style="display: block; color: #ddd; font-weight: bold; font-size: 0.9rem; margin-bottom: 6px;">WhatsApp de Contacto:</label>
+                            <input type="tel" id="cli-telefono" required placeholder="Ej: +58 412 0000000" style="width: 100%; padding: 12px; border-radius: 8px; background: #1f2937; border: 1px solid var(--border-color); color: #fff;">
+                        </div>
+                    </div>
+
+                    <!-- 2. Método de Pago y Referencia -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div>
+                            <label style="display: block; color: #ddd; font-weight: bold; font-size: 0.9rem; margin-bottom: 6px;">Método Utilizado:</label>
+                            <select id="cli-metodo" required style="width: 100%; padding: 12px; border-radius: 8px; background: #1f2937; border: 1px solid var(--border-color); color: #fff;">
+                                <option value="">-- Selecciona --</option>
+                                <option value="Binance Pay (USDT)">🟡 Binance Pay (USDT)</option>
+                                <option value="Zinli / Zelle (USD)">🟣 Zinli / Zelle (USD)</option>
+                                <option value="Pago Móvil (Tasa BCV)">🟢 Pago Móvil (Tasa BCV)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label style="display: block; color: #ddd; font-weight: bold; font-size: 0.9rem; margin-bottom: 6px;">N° Referencia / ID:</label>
+                            <input type="text" id="cli-referencia" required placeholder="Ej: Ref: 894321 / ID: 109283" style="width: 100%; padding: 12px; border-radius: 8px; background: #1f2937; border: 1px solid var(--border-color); color: #fff;">
+                        </div>
+                    </div>
+
+                    <!-- 3. ZONA DE CARGA DE CAPTURA DE PAGO -->
+                    <div style="margin-bottom: 2rem;">
+                        <label style="display: block; color: #ddd; font-weight: bold; font-size: 0.9rem; margin-bottom: 6px;">📸 Captura o Comprobante de Pago:</label>
+                        <div class="upload-box">
+                            <input type="file" id="cli-captura" accept="image/*" required onchange="mostrarNombreArchivo(this)">
+                            <div id="upload-label">
+                                <span style="font-size: 2rem; display: block; margin-bottom: 5px;">📤</span>
+                                <span style="color: var(--neon-cyan); font-weight: bold; font-size: 0.95rem;">Haz clic o arrastra tu captura aquí</span>
+                                <span style="color: var(--text-muted); font-size: 0.8rem; display: block; margin-top: 4px;">Soporta JPG, PNG o captura de pantalla (Max 5MB)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BOTÓN GATILLO HACIA WHATSAPP -->
+                    <button type="submit" class="btn-buy" style="width: 100%; padding: 1.2rem; font-size: 1.1rem; font-weight: 900; background: #25D366; color: #000; border: none; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 0 20px rgba(37, 211, 102, 0.3);">
+                        <span>📲 ENVIAR VERIFICACIÓN A WHATSAPP</span>
+                    </button>
+                    <div style="text-align: center; font-size: 0.75rem; color: var(--text-muted); margin-top: 10px;">
+                        Al hacer clic, se abrirá tu WhatsApp para enviar el reporte directo al equipo de soporte.
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- SCRIPT DE CARGA Y EMBUDO -->
+    <script>
+        // 1. Cargar datos y foto del producto al abrir la página
+       // 1. Cargar datos desde URL o leyendo el Carrito completo
+        window.onload = function() {
+            const params = new URLSearchParams(window.location.search);
+            
+            // Si en la URL dice ?origen=carrito, leemos todo lo que sumó en la memoria
+            if (params.get('origen') === 'carrito') {
+                let carrito = JSON.parse(localStorage.getItem('klaus_carrito')) || [];
+                
+                if (carrito.length === 0) {
+                    alert('Tu carrito está vacío. Volviendo a la tienda...');
+                    window.location.href = 'index.html';
+                    return;
+                }
+
+                // Unimos todos los nombres en una sola lista para el recibo
+                let nombresJuegos = carrito.map(item => `• ${item.nombre} (${item.precio} USDT)`).join('\n');
+                // Sumamos el precio total
+                let totalSuma = carrito.reduce((sum, item) => sum + item.precio, 0).toFixed(2);
+                
+                // Mostramos el paquete en pantalla
+                document.getElementById('resumen-nombre').innerText = `Paquete Gamer (${carrito.length} juegos):\n` + carrito.map(i => i.nombre).join(' + ');
+                document.getElementById('resumen-precio').innerText = totalSuma + ' USDT';
+                // Ponemos la foto del primer juego de la lista como portada principal
+                document.getElementById('resumen-img').src = carrito[0].imagen || 'imagenes/favicon2.jpg';
+                
+            } else {
+                // Si compró un juego individual de forma directa, funciona igual que antes
+                const juego = params.get('juego') || 'God of War: Ragnarök';
+                const precio = params.get('precio') || '29.99';
+                const img = params.get('img') || 'imagenes/playstation/Juegos/ragnarok.jpg';
+
+                document.getElementById('resumen-nombre').innerText = juego;
+                document.getElementById('resumen-precio').innerText = precio + ' USDT';
+                document.getElementById('resumen-img').src = img;
+            }
+        };
+
+        // 2. Cambiar el texto de la caja cuando seleccionan una foto
+        function mostrarNombreArchivo(input) {
+            if (input.files && input.files[0]) {
+                const nombreArchivo = input.files[0].name;
+                document.getElementById('upload-label').innerHTML = `
+                    <span style="font-size: 2rem; display: block; margin-bottom: 5px;">✅</span>
+                    <span style="color: var(--neon-green); font-weight: bold; font-size: 0.95rem;">¡Captura lista para adjuntar!</span>
+                    <span style="color: #fff; font-size: 0.85rem; display: block; margin-top: 4px; background: #1f2937; padding: 4px 8px; border-radius: 4px; display: inline-block;">📁 ${nombreArchivo}</span>
+                `;
+            }
+        }
+
+        // 3. Procesar y enviar a WhatsApp
+        function procesarEnvioWhatsApp() {
+            const juego = document.getElementById('resumen-nombre').innerText;
+            const precio = document.getElementById('resumen-precio').innerText;
+            const nombre = document.getElementById('cli-nombre').value;
+            const telefono = document.getElementById('cli-telefono').value;
+            const metodo = document.getElementById('cli-metodo').value;
+            const referencia = document.getElementById('cli-referencia').value;
+            const archivoInput = document.getElementById('cli-captura');
+            
+            let nombreCaptura = "No seleccionada";
+            if (archivoInput.files.length > 0) {
+                nombreCaptura = archivoInput.files[0].name;
+            }
+
+            // ==========================================
+            // ⚠️ PON AQUÍ TU NÚMERO DE WHATSAPP REAL (Sin el 0 del código de área)
+            // ==========================================
+            const tuNumeroWhatsApp = "584220000000"; 
+
+            const mensaje = `*⚡ REPORTING DE PAGO - KLAUS GAMING VZLA ⚡*\n\n` +
+                            `*🎮 Producto:* ${juego}\n` +
+                            `*💰 Total:* ${precio}\n\n` +
+                            `*👤 Cliente:* ${nombre}\n` +
+                            `*📱 Contacto:* ${telefono}\n` +
+                            `*🏦 Método:* ${metodo}\n` +
+                            `*🧾 N° Referencia:* ${referencia}\n` +
+                            `*📸 Captura adjunta:* ${nombreCaptura}\n\n` +
+                            `_Hola! He realizado el pago. Por favor verifica mi referencia y adjunto la captura en este chat para recibir mi código._`;
+
+            const urlWhatsApp = `https://api.whatsapp.com/send?phone=${tuNumeroWhatsApp}&text=${encodeURIComponent(mensaje)}`;
+
+            // Aviso instructivo al cliente (Importante para E-commerce sin servidor)
+            alert('¡Datos validados con éxito! 🚀\n\nAl abrirse WhatsApp, recuerda ADJUNTAR LA FOTO de tu pago en el chat que acabas de seleccionar (' + nombreCaptura + ') para que nuestro equipo te envíe el código de inmediato.');
+            localStorage.removeItem('klaus_carrito')
+            window.open(urlWhatsApp, '_blank');
+        }
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
