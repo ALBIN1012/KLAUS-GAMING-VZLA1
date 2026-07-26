@@ -98,48 +98,201 @@
 
     <!-- MOTOR DE PLANTILLA DINÁMICA -->
     <script>
-        // 📚 BASE DE DATOS DEL CATÁLOGO
+        // =========================================================================
+        // 📚 BASE DE DATOS DEL CATÁLOGO (Todos los Departamentos)
+        // =========================================================================
         const baseDeDatosJuegos = {
+            /* --- PLAYSTATION --- */
             "ragnarok": {
                 titulo: "God of War: Ragnarök",
                 plataforma: "PS5 EXCLUSIVO",
                 precio: 29.99,
-                imagen: "imagenes/playstation/juegos/ragnarok.jpg",
-                // Enlace de prueba libre de restricciones para God of War
+                imagen: "imagenes/playstation/Juegos/ragnarok.jpg",
                 trailer: "https://www.youtube.com/embed/gHzUbdqU4s8",
-                desc: "El épico desenlace de la saga nórdica. Únete a Kratos y Atreus en una aventura mitológica para evitar el fin del mundo.",
-                specs: [
-                    "🎮 <strong>Plataforma:</strong> PlayStation 4 / PlayStation 5",
-                    "🔑 <strong>Formato:</strong> Código Digital / Cuenta Primaria"
-                ]
+                desc: "El épico desenlace de la saga nórdica. Únete a Kratos y Atreus en una aventura mitológica para evitar el fin del mundo con combate táctico en 4K.",
+                specs: ["🎮 Plataforma: PS4 / PS5", "🔑 Formato: Código Digital / Cuenta", "🌐 Región: Global / USA", "🛡️ Garantía: Entrega inmediata"]
             },
             "spiderman2": {
                 titulo: "Marvel's Spider-Man 2",
                 plataforma: "PS5 EXCLUSIVO",
                 precio: 35.00,
-                imagen: "imagenes/playstation/juegos/spiderman2.jpg",
-                // Enlace libre para Spider-Man 2
+                imagen: "imagenes/playstation/Juegos/spiderman2.jpg",
                 trailer: "https://www.youtube.com/embed/9fVYcuyuvks",
-                desc: "Los Spider-Men Peter Parker y Miles Morales regresan para una nueva y emocionante aventura.",
-                specs: [
-                    "🎮 <strong>Plataforma:</strong> PlayStation 5 Exclusivo",
-                    "🔑 <strong>Formato:</strong> Código Digital / Cuenta Primaria"
-                ]
+                desc: "Los Spider-Men Peter Parker y Miles Morales regresan para una nueva y emocionante aventura balanceándose por toda la Nueva York de Marvel.",
+                specs: ["🎮 Plataforma: PS5 Exclusivo", "🔑 Formato: Código Digital / Cuenta", "🌐 Región: Global / USA", "🛡️ Garantía: Entrega inmediata"]
             },
             "tlou": {
                 titulo: "The Last of Us Part I",
                 plataforma: "PS4 & PS5",
                 precio: 25.00,
-                imagen: "imagenes/playstation/juegos/thelastofus.jpg",
-                // Enlace libre para The Last of Us
+                imagen: "imagenes/playstation/Juegos/thelastofus.jpg",
                 trailer: "https://www.youtube.com/embed/Wx2juxwjUTg",
-                desc: "Disfruta de la emotiva historia y los inolvidables personajes de Joel y Ellie.",
-                specs: [
-                    "🎮 <strong>Plataforma:</strong> PlayStation 4 / PlayStation 5 Remake",
-                    "🔑 <strong>Formato:</strong> Código Digital / Cuenta Primaria"
-                ]
+                desc: "Disfruta de la emotiva historia y los inolvidables personajes de Joel y Ellie en este remake reconstruido completamente desde cero para la consola PlayStation 5.",
+                specs: ["🎮 Plataforma: PS4 / PS5 Remake", "🔑 Formato: Código Digital / Cuenta", "🌐 Región: Global / USA", "🛡️ Garantía: Entrega inmediata"]
+            },
+
+            /* --- XBOX & GAME PASS --- */
+            "gp-ultimate": {
+                titulo: "Xbox Game Pass Ultimate - 3 Meses",
+                plataforma: "XBOX / PC / NUBE",
+                precio: 35.00,
+                imagen: "imagenes/xbox/gamepass-ultimate.jpg",
+                trailer: "https://www.youtube.com/embed/g-0b7r34y9g",
+                desc: "La suscripción definitiva para gamers. Incluye multijugador online en consola, catálogo de cientos de juegos en Xbox y PC, EA Play y juego en la nube.",
+                specs: ["🎮 Plataforma: Xbox Series X|S, Xbox One y PC", "🔑 Formato: Código de 25 dígitos", "🌐 Región: Global / USA / LATAM", "⚡ Canje: Directo en tu cuenta personal"]
+            },
+            "gp-essentials": {
+                titulo: "Xbox Game Pass Essentials - 1 Mes",
+                plataforma: "XBOX CONSOLA",
+                precio: 12.00,
+                imagen: "imagenes/xbox/gamepass-essentials.jpg",
+                trailer: "https://www.youtube.com/embed/0tUqIHwHDEc",
+                desc: "Acceso al catálogo base con cientos de juegos de alta calidad para descargar y jugar directamente en tu consola Xbox.",
+                specs: ["🎮 Plataforma: Xbox Series X|S y Xbox One", "🔑 Formato: Código Digital Oficial", "🌐 Región: Global", "⚡ Canje: Inmediato por WhatsApp"]
+            },
+            "gp-core": {
+                titulo: "Xbox Game Pass Core - 12 Meses",
+                plataforma: "XBOX CONSOLA",
+                precio: 55.00,
+                imagen: "imagenes/xbox/gamepass-core.jpg",
+                trailer: "https://www.youtube.com/embed/s1A0mX5w-l0",
+                desc: "La evolución de Xbox Live Gold. Disfruta de 1 año completo de multijugador online en consola y un catálogo selecto de más de 25 juegos increíbles.",
+                specs: ["🎮 Plataforma: Xbox Series X|S y Xbox One", "🔑 Formato: Código Anual 25 dígitos", "🌐 Región: Global / Sin bloqueo", "⚡ Canje: Oficial en Microsoft Store"]
+            },
+            "fc26-xbox": {
+                titulo: "EA Sports FC 26 - Xbox Series X|S",
+                plataforma: "SERIES X|S",
+                precio: 59.99,
+                imagen: "imagenes/xbox/Juegos/fc26-xbox.jpg",
+                trailer: "https://www.youtube.com/embed/XhP3Xh4LMA8",
+                desc: "Siente el realismo del fútbol mundial con tecnología HyperMotionV, optimizado para aprovechar al máximo los 120 FPS y el Quick Resume de tu Xbox Series.",
+                specs: ["🎮 Plataforma: Xbox Series X|S", "🔑 Formato: Código de Juego Completo", "🌐 Región: Global", "⚡ Entrega: Inmediata tras verificar pago"]
+            },
+            "halo-infinite": {
+                titulo: "Halo Infinite - Campaña Completa",
+                plataforma: "XBOX / PC",
+                precio: 29.99,
+                imagen: "imagenes/xbox/Juegos/halo-infinite.jpg",
+                trailer: "https://www.youtube.com/embed/PyMlV5_HRWk",
+                desc: "Cuando toda esperanza se pierde y el destino de la humanidad pende de un hilo, el Jefe Maestro está listo para enfrentarse al enemigo más despiadado.",
+                specs: ["🎮 Plataforma: Xbox One, Series X|S y PC", "🔑 Formato: Xbox Play Anywhere Key", "🌐 Región: Global", "⚡ Garantía: 100% de por vida"]
+            },
+
+            /* --- STEAM / PC --- */
+            "steam-20": {
+                titulo: "Steam Wallet Card - $20 USD",
+                plataforma: "STEAM WALLET",
+                precio: 20.00,
+                imagen: "imagenes/steam/steamwallet.jpg",
+                trailer: "https://www.youtube.com/embed/4qbm0g6aQeg",
+                desc: "Añade fondos al instante a tu monedero de Steam. Ideal para comprar juegos en rebajas, DLCs o ítems dentro del mercado de la comunidad.",
+                specs: ["🎮 Plataforma: PC (Steam Client)", "🔑 Formato: Código de Activación de Saldo", "🌐 Región: Global / Cuentas en USD", "⚡ Entrega: En 5 minutos por WhatsApp"]
+            },
+            "cyberpunk": {
+                titulo: "Cyberpunk 2077: Phantom Liberty",
+                plataforma: "OFERTA PC",
+                precio: 28.00,
+                imagen: "imagenes/steam/cyberpunk2077.jpg",
+                trailer: "https://www.youtube.com/embed/P99qJGrPNLs",
+                desc: "Una expansión de suspense y espionaje para el RPG de acción y mundo abierto Cyberpunk 2077. Adéntrate en el traicionero distrito de Dogtown.",
+                specs: ["🎮 Plataforma: PC (Steam Key)", "🔑 Formato: Key Oficial de Juego", "🌐 Región: Global / Multilenguaje", "⚡ Entrega: Instantánea"]
+            },
+            "bo6-pc": {
+                titulo: "Call of Duty: Black Ops 6 - PC",
+                plataforma: "STEAM KEY",
+                precio: 69.99,
+                imagen: "imagenes/steam/callofduty6.jpg",
+                trailer: "https://www.youtube.com/embed/1aB-11p_oqE",
+                desc: "La nueva era de Black Ops con una campaña cinematográfica, el frenético multijugador clásico y el épico regreso por rondas de los Zombies.",
+                specs: ["🎮 Plataforma: PC (Steam / Battle.net)", "🔑 Formato: Digital Key", "🌐 Región: Global", "⚡ Garantía: Oficial Activision"]
+            },
+            "elden-ring": {
+                titulo: "Elden Ring + Shadow of the Erdtree",
+                plataforma: "GOTY PC",
+                precio: 55.00,
+                imagen: "imagenes/steam/eldenring.jpg",
+                trailer: "https://www.youtube.com/embed/AKX3KuTCVSI",
+                desc: "La experiencia completa del Juego del Año. Explora las inmensas Tierras Intermedias y adéntrate en el Reino de las Sombras en su monumental expansión.",
+                specs: ["🎮 Plataforma: PC (Steam)", "🔑 Formato: Steam Key Global", "🌐 Región: Global", "⚡ Entrega: Inmediata por WhatsApp"]
+            },
+
+            /* --- NINTENDO SWITCH --- */
+            "zelda-totk": {
+                titulo: "The Legend of Zelda: Tears of the Kingdom",
+                plataforma: "NINTENDO SWITCH",
+                precio: 59.99,
+                imagen: "imagenes/nintendo/juegos/zelda.jpg",
+                trailer: "https://www.youtube.com/embed/uHGShqcAHlQ",
+                desc: "Una aventura épica que se extiende a través de la tierra y los cielos expansivos de Hyrule. Crea tus propias armas y vehículos para salvar el reino.",
+                specs: ["🎮 Plataforma: Nintendo Switch", "🔑 Formato: Código Digital eShop", "🌐 Región: USA / Global", "⚡ Canje: Directo en Nintendo eShop"]
+            },
+            "mariokart8": {
+                titulo: "Mario Kart 8 Deluxe + Booster Course",
+                plataforma: "NINTENDO SWITCH",
+                precio: 49.99,
+                imagen: "imagenes/nintendo/juegos/mariokart0.jpg",
+                trailer: "https://www.youtube.com/embed/tKlRN2YpxRE",
+                desc: "El juego de carreras definitivo para jugar con amigos y familia. Incluye el pase de pistas extra con 48 recorridos remasterizados de toda la saga.",
+                specs: ["🎮 Plataforma: Nintendo Switch", "🔑 Formato: Código eShop Oficial", "🌐 Región: Global / Multilenguaje", "⚡ Entrega: Instantánea"]
+            },
+            "smash-bros": {
+                titulo: "Super Smash Bros. Ultimate",
+                plataforma: "NINTENDO SWITCH",
+                precio: 54.99,
+                imagen: "imagenes/nintendo/juegos/supermariosmash.jpg",
+                trailer: "https://www.youtube.com/embed/B3Y-JIfGtrY",
+                desc: "El mayor crossover de lucha de la historia de los videojuegos. Lucha con Mario, Sonic, Cloud, Steve de Minecraft y docenas de leyendas más.",
+                specs: ["🎮 Plataforma: Nintendo Switch", "🔑 Formato: Código eShop Digital", "🌐 Región: Global", "⚡ Garantía: 100% Sin riesgo de ban"]
+            },
+            "eshop-25": {
+                titulo: "Nintendo eShop Card - $25 USD",
+                plataforma: "SALDO ESHOP",
+                precio: 25.00,
+                imagen: "imagenes/nintendo/juegos/giftcard.jpg",
+                trailer: "https://www.youtube.com/embed/5kcdRBHM7kM",
+                desc: "Recarga saldo oficial en tu cuenta Nintendo. Compra juegos digitales, pases de expansión, membresías de Nintendo Switch Online y juegos indies.",
+                specs: ["🎮 Plataforma: Nintendo eShop", "🔑 Formato: Tarjeta de Saldo Digital", "🌐 Región: Cuentas de Estados Unidos (USA)", "⚡ Canje: Rápido y seguro"]
+            },
+
+            /* --- GIFT CARDS --- */
+            "gc-xbox-50": {
+                titulo: "Xbox Gift Card - $50 USD",
+                plataforma: "XBOX CARD",
+                precio: 50.00,
+                imagen: "imagenes/giftcards/tarjetas/giftcardxbox.jpg",
+                trailer: "https://www.youtube.com/embed/s1A0mX5w-l0",
+                desc: "Saldo digital canjeable en la Microsoft Store para comprar juegos completos, complementos, suscripciones Game Pass o películas en tu consola Xbox y PC.",
+                specs: ["🎮 Plataforma: Microsoft / Xbox Store", "🔑 Formato: Tarjeta Prepagada Digital", "🌐 Región: USA (Estados Unidos)", "⚡ Entrega: 5 Minutos tras verificar"]
+            },
+            "gc-psn-25": {
+                titulo: "PlayStation Network Card - $25 USD",
+                plataforma: "PSN CARD",
+                precio: 25.00,
+                imagen: "imagenes/giftcards/tarjetas/gitcardplaystation.jpg",
+                trailer: "https://www.youtube.com/embed/gHzUbdqU4s8",
+                desc: "Añade fondos fácilmente a tu monedero de PlayStation Network sin necesidad de tarjeta de crédito. Compra juegos, DLCs y saldo para Fortnite o COD.",
+                specs: ["🎮 Plataforma: PlayStation Store (PS4 / PS5)", "🔑 Formato: Código de Tarjeta PSN", "🌐 Región: Cuentas USA", "⚡ Garantía: Código 100% genuino"]
+            },
+            "gc-roblox": {
+                titulo: "Roblox Digital Gift Card - 2500 Robux",
+                plataforma: "ROBLOX",
+                precio: 25.00,
+                imagen: "imagenes/giftcards/tarjetas/robloxgitcard.jpg",
+                trailer: "https://www.youtube.com/embed/eAqnytB_HAR",
+                desc: "La moneda virtual oficial de Roblox. Úsala para comprar ítems exclusivos en el catálogo, mejorar tu avatar o adquirir pases y habilidades dentro de tus juegos favoritos.",
+                specs: ["🎮 Plataforma: Roblox (PC, Móvil y Consolas)", "🔑 Formato: Código PIN Oficial", "🌐 Región: Global / Todas las cuentas", "⚡ Entrega: Inmediata"]
+            },
+            "gc-apple-15": {
+                titulo: "Apple App Store / iTunes - $15 USD",
+                plataforma: "APPLE / GOOGLE",
+                precio: 15.00,
+                imagen: "imagenes/giftcards/tarjetas/applegiftcard.jpg",
+                trailer: "https://www.youtube.com/embed/Fqq-m8mU--c",
+                desc: "La tarjeta todo en uno para el ecosistema Apple. Recarga saldo para pagar tu suscripción de iCloud+, Apple Music, juegos en Apple Arcade o compras dentro de apps.",
+                specs: ["🎮 Plataforma: App Store, iTunes y Mac", "🔑 Formato: Código Digital Oficial", "🌐 Región: Cuentas de Apple USA", "⚡ Canje: Directo desde tu iPhone / iPad"]
             }
         };
+
         // ⚙️ LÓGICA DE TRANSFORMACIÓN AL ABRIR
         window.addEventListener('DOMContentLoaded', function() {
             const params = new URLSearchParams(window.location.search);
