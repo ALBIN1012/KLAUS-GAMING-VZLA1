@@ -99,10 +99,39 @@
     <!-- MOTOR DE PLANTILLA DINÁMICA -->
     <script>
         // =========================================================================
-        // 📚 BASE DE DATOS DEL CATÁLOGO (Todos los Departamentos)
+        // 📚 BASE DE DATOS DEL CATÁLOGO (Todos los Departamentos y Membresías)
         // =========================================================================
         const baseDeDatosJuegos = {
-            /* --- PLAYSTATION --- */
+            /* --- PLAYSTATION PLUS (MEMBRESÍAS) --- */
+            "ps-essential": {
+                titulo: "PS Plus Essential - 1 Mes",
+                plataforma: "ESSENTIAL",
+                precio: 10.00,
+                imagen: "imagenes/playstation/playstationessential.jpg",
+                trailer: "https://www.youtube.com/embed/gHzUbdqU4s8",
+                desc: "Acceso al multijugador online de PlayStation, juegos descargables mensuales gratuitos y descuentos exclusivos en PlayStation Store para tu consola.",
+                specs: ["🎮 Plataforma: PS4 / PS5", "🔑 Formato: Código / Cuenta", "🌐 Región: Global / USA", "⚡ Entrega: Inmediata por WhatsApp"]
+            },
+            "ps-extra": {
+                titulo: "PS Plus Extra - 1 Mes",
+                plataforma: "EXTRA",
+                precio: 15.00,
+                imagen: "imagenes/playstation/playstationextra.jpg",
+                trailer: "https://www.youtube.com/embed/9fVYcuyuvks",
+                desc: "Todo lo de Essential más un catálogo enorme y en constante actualización con cientos de los mejores juegos de PS4 y PS5 para descargar y jugar sin límites.",
+                specs: ["🎮 Plataforma: PS4 / PS5", "🔑 Formato: Código / Cuenta", "🌐 Región: Global / USA", "⚡ Entrega: Inmediata por WhatsApp"]
+            },
+            "ps-deluxe": {
+                titulo: "PS Plus Deluxe - 1 Mes",
+                plataforma: "DELUXE",
+                precio: 18.00,
+                imagen: "imagenes/playstation/playstationdeluxe.jpg",
+                trailer: "https://www.youtube.com/embed/Wx2juxwjUTg",
+                desc: "La experiencia definitiva. Todo el catálogo de Extra, más pruebas de juegos nuevos antes de comprarlos y la colección de juegos clásicos de PS1, PS2 y PSP.",
+                specs: ["🎮 Plataforma: PS4 / PS5", "🔑 Formato: Código / Cuenta", "🌐 Región: Global / USA", "⚡ Entrega: Inmediata por WhatsApp"]
+            },
+
+            /* --- PLAYSTATION (JUEGOS) --- */
             "ragnarok": {
                 titulo: "God of War: Ragnarök",
                 plataforma: "PS5 EXCLUSIVO",
